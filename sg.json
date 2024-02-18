@@ -8,10 +8,103 @@
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "sg",
+    
+      "server": "dns.huhu.icu",
+      "server_port": 11124,
+      "method": "chacha20-ietf-poly1305",
+      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "hk",
+    
+      "server": "dns.huhu.icu",
+      "server_port": 11123,
+      "method": "chacha20-ietf-poly1305",
+      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "jp",
+    
+      "server": "dns.huhu.icu",
+      "server_port": 11125,
+      "method": "chacha20-ietf-poly1305",
+      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "tw",
+    
+      "server": "twdns.huhu.icu",
+      "server_port": 11126,
+      "method": "chacha20-ietf-poly1305",
+      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "us",
+    
+      "server": "dnsus.huhu.icu",
+      "server_port": 23005,
+      "method": "chacha20-ietf-poly1305",
+      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "uk",
+    
+      "server": "dnsuk.huhu.icu",
+      "server_port": 23005,
+      "method": "chacha20-ietf-poly1305",
+      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
     }
   ],
   "route": {
     "rules": [
+      {
+        "geosite": [
+          "openai",
+          "catchplay",
+          "bahamut",
+          "bilibili"
+        ],
+        "outbound": "tw"
+      },
+      {
+        "geosite": [
+          "disney",
+          "netflix"
+        ],
+        "outbound": "sg"
+      },
+      {
+        "geosite": [
+          "abema",
+          "dmm",
+          "hulu",
+          "niconico"
+        ],
+        "outbound": "jp"
+      },
+      {
+        "geosite": [
+          "bbc",
+          "twitter"
+        ],
+        "outbound": "uk"
+      },
+      {
+        "geosite": [
+          "hbo",
+          "dazn"
+        ],
+        "outbound": "us"
+      },
       {
         "outbound": "block",
         "geoip": [
