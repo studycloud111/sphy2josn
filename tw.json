@@ -13,24 +13,6 @@
   "route": {
     "rules": [
       {
-        "geosite": [
-          "netflix"
-        ],
-        "outbound": "netflix"
-      },
-      {
-        "geosite": [
-          "disney"
-        ],
-        "outbound": "disney"
-      },
-      {
-        "geosite": [
-          "openai"
-        ],
-        "outbound": "openai"
-      },
-      {
         "outbound": "block",
         "geoip": [
           "private"
