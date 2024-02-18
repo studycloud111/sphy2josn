@@ -68,21 +68,37 @@
     "rules": [
       {
         "geosite": [
-          "netflix"
+          "netflix",
+          "disney",
+          "openai",
+          "catchplay",
+          "bahamut",
+          "bilibili"
         ],
         "outbound": "tw"
       },
       {
         "geosite": [
-          "disney"
+          "abema",
+          "dmm",
+          "hulu",
+          "niconico"
         ],
-        "outbound": "tw"
+        "outbound": "jp"
       },
       {
         "geosite": [
-          "openai"
+          "bbc",
+          "twitter"
         ],
-        "outbound": "tw"
+        "outbound": "uk"
+      },
+      {
+        "geosite": [
+          "hbo",
+          "dazn"
+        ],
+        "outbound": "us"
       },
       {
         "outbound": "block",
