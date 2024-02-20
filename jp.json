@@ -119,18 +119,6 @@
         "outbound": "direct"
       },
       {
-        "geosite": [
-          "cn"
-        ],
-        "outbound": "block"
-      },
-      {
-        "geoip": [
-          "cn"
-        ],
-        "outbound": "block"
-      },
-      {
         "domain_regex": [
             "(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com",
             "(.+.|^)(360|so).(cn|com)",
