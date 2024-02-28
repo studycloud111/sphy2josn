@@ -1,0 +1,60 @@
+quic:
+  initStreamReceiveWindow: 8388608
+  maxStreamReceiveWindow: 8388608
+  initConnReceiveWindow: 20971520
+  maxConnReceiveWindow: 20971520
+  maxIdleTimeout: 30s
+  maxIncomingStreams: 1024
+  disablePathMTUDiscovery: false
+ignoreClientBandwidth: false
+disableUDP: false
+udpIdleTimeout: 60s
+resolver:
+  type: system
+acl:
+  inline:
+    - hk(geosite:disney)
+    - hk(geosite:netflix)
+    - tw(geosite:openai)
+    - tw(geosite:catchplay)
+    - tw(geosite:bahamut)
+    - tw(geosite:projectsekai)
+    - tw(geosite:bilibili)
+    - jp(geosite:abema)
+    - jp(geosite:dmm)
+    - jp(geosite:hulu)
+    - jp(geosite:niconico)
+    - uk(geosite:bbc)
+    - uk(geosite:twitter)
+    - us(geosite:hbo)
+    - us(geosite:dazn)
+    - direct(all)
+masquerade:
+  type: 404
+outbounds:
+  - name: direct
+    type: direct
+  - name: sg
+    type: socks5
+    socks5:
+      addr: dns.huhu.icu:22220
+  - name: hk
+    type: socks5
+    socks5:
+      addr: dns.huhu.icu:22221
+  - name: jp
+    type: socks5
+    socks5:
+      addr: dns.huhu.icu:22222
+  - name: tw
+    type: socks5
+    socks5:
+      addr: twdns.huhu.icu:22222
+  - name: us
+    type: socks5
+    socks5:
+      addr: dnsus.huhu.icu:22222
+  - name: uk
+    type: socks5
+    socks5:
+      addr: dnsuk.huhu.icu:22222
