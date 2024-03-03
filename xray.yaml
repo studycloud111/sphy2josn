@@ -1,0 +1,92 @@
+[
+  {
+      "tag": "sg",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "dns.huhu.icu",
+          "port": 22220
+         }
+       ]
+     }
+   },
+   {
+      "tag": "hk",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "dns.huhu.icu",
+          "port": 22221
+         }
+       ]
+     }
+   },
+        {
+      "tag": "jp",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "dns.huhu.icu",
+          "port": 22222
+         }
+       ]
+     }
+   },
+   {
+        "tag": "tw",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "twdns.huhu.icu",
+          "port": 22222
+         }
+       ]
+     }
+   },
+   {
+      "tag": "us",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "dnsus.huhu.icu",
+          "port": 22222
+         }
+       ]
+     }
+   },
+   {
+      "tag": "uk",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "dnsuk.huhu.icu",
+          "port": 22222
+         }
+        ]
+      }
+  },
+  {
+    "tag": "IPv4_out",
+    "protocol": "freedom",
+    "settings": {
+      "domainStrategy": "UseIPv4v6"
+    }
+  },
+  {
+    "tag": "IPv6_out",
+    "protocol": "freedom",
+    "settings": {
+      "domainStrategy": "UseIPv6"
+    }
+  },
+  {
+    "protocol": "blackhole",
+    "tag": "block"
+  }  
+    ]
