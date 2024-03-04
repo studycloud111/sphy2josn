@@ -3,7 +3,7 @@
     "rules": [
         {
         "type": "field",
-        "outboundTag": "jp",
+        "outboundTag": "hk",
         "domain": [
           "geosite:disney",
           "geosite:netflix"
