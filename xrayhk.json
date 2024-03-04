@@ -1,0 +1,72 @@
+{
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+        {
+        "type": "field",
+        "outboundTag": "jp",
+        "domain": [
+          "geosite:disney",
+          "geosite:netflix"
+            ]
+        },
+        {
+        "type": "field",
+        "outboundTag": "uk",
+        "domain": [
+          "geosite:bbc",
+          "geosite:twitter"
+            ]
+        },
+        {
+        "type": "field",
+        "outboundTag": "tw",
+        "domain": [
+          "geosite:openai",
+          "geosite:catchplay",
+          "geosite:bahamut",
+          "geosite:projectsekai",
+          "geosite:bilibili"
+            ]
+        },
+        {
+        "type": "field",
+        "outboundTag": "jp",
+        "domain": [
+          "geosite:abema",
+          "geosite:dmm",
+          "geosite:hulu",
+          "geosite:niconico"
+            ]
+        },
+        {
+        "type": "field",
+        "outboundTag": "us",
+        "domain": [
+          "geosite:hbo",
+          "geosite:dazn"
+            ]
+        },
+        {
+      "outboundTag": "block",
+      "ip": [
+        "geoip:private"
+      ]
+    },
+    {
+      "outboundTag": "block",
+      "protocol": [
+        "bittorrent"
+      ]
+    },
+    {
+      "domain": [
+        "geosite:google"
+      ],
+      "outboundTag": "IPv4_out"
+    },
+    {
+      "outboundTag": "IPv4_out",
+      "network": "udp,tcp"
+    }
+  ]
+}
