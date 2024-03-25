@@ -28,7 +28,7 @@ acl:
     - uk(geosite:twitter)
     - us(geosite:hbo)
     - us(geosite:dazn)
-    - us(all)
+    - direct(all)
 masquerade:
   type: 404
 outbounds:
@@ -58,8 +58,4 @@ outbounds:
     type: socks5
     socks5:
       addr: dnsuk.huhu.icu:22222
-  - name: us
-    type: socks5
-    socks5:
-      addr: 82.208.23.53:22221
       
