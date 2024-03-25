@@ -28,7 +28,7 @@ acl:
     - uk(geosite:twitter)
     - us(geosite:hbo)
     - us(geosite:dazn)
-    - direct(all)
+    - lus(all)
 masquerade:
   type: 404
 outbounds:
