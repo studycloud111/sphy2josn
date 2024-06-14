@@ -49,7 +49,7 @@ outbounds:
   - name: tw
     type: socks5
     socks5:
-      addr: twdns.huhu.icu:22222
+      addr: dns.huhu.icu:22223
   - name: us
     type: socks5
     socks5:
