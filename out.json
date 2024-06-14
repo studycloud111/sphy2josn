@@ -41,8 +41,8 @@
       "settings": {
        "servers": [
          {
-          "address": "twdns.huhu.icu",
-          "port": 22222
+          "address": "dns.huhu.icu",
+          "port": 22223
          }
        ]
      }
