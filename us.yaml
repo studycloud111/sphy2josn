@@ -24,8 +24,6 @@ acl:
     - jp(geosite:dmm)
     - jp(geosite:hulu)
     - jp(geosite:niconico)
-    - uk(geosite:bbc)
-    - uk(geosite:twitter)
     - us(geosite:hbo)
     - us(geosite:dazn)
     - lus(all)
@@ -54,10 +52,6 @@ outbounds:
     type: socks5
     socks5:
       addr: dnsus.huhu.icu:22222
-  - name: uk
-    type: socks5
-    socks5:
-      addr: dnsuk.huhu.icu:22222
   - name: lus
     type: socks5
     socks5:
