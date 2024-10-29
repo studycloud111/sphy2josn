@@ -11,14 +11,6 @@
         },
         {
         "type": "field",
-        "outboundTag": "uk",
-        "domain": [
-          "geosite:bbc",
-          "geosite:twitter"
-            ]
-        },
-        {
-        "type": "field",
         "outboundTag": "tw",
         "domain": [
           "geosite:openai",
