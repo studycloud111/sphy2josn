@@ -40,7 +40,7 @@
         },
         {
         "type": "field",
-        "inboundTag": "url",
+        "inboundTag": "url1",
         "domain": [
           "google-analytics.com"
             ]
