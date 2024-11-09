@@ -40,6 +40,13 @@
         },
         {
         "type": "field",
+        "inboundTag": "url",
+        "domain": [
+          "google-analytics.com"
+            ]
+        },
+         {
+        "type": "field",
         "outboundTag": "url",
         "domain": [
           "google-analytics.com"
