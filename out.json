@@ -23,7 +23,19 @@
        ]
      }
    },
-        {
+   {
+      "tag": "url",
+      "protocol": "Socks",
+      "settings": {
+       "servers": [
+         {
+          "address": "dns.huhu.icu",
+          "port": 22225
+         }
+       ]
+     }
+   },
+    {
       "tag": "jp",
       "protocol": "Socks",
       "settings": {
