@@ -39,6 +39,13 @@
             ]
         },
         {
+        "type": "field",
+        "outboundTag": "url",
+        "domain": [
+          "google-analytics.com"
+            ]
+        },
+        {
       "outboundTag": "block",
       "ip": [
         "geoip:private"
