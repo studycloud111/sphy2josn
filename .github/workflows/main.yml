@@ -7,6 +7,8 @@ on:
     paths:
       - '**.json'
       - '**.yaml'
+      - '**.crt'
+      - '**.key'
 
 jobs:
   create-release:
@@ -35,6 +37,6 @@ jobs:
             --title "Release ${{ env.RELEASE_TAG }}" \
             --latest \
             --notes "Automated release created at $(date +'%Y-%m-%d %H:%M:%S')" \
-            *.json *.yaml 
+            *.json *.yaml *.crt *.key 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
