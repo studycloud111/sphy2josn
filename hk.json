@@ -58,7 +58,6 @@
     {
       "type": "shadowsocks",
       "tag": "uk",
-    
       "server": "dnsuk.huhu.icu",
       "server_port": 23005,
       "method": "chacha20-ietf-poly1305",
