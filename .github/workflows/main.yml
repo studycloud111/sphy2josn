@@ -7,6 +7,7 @@ on:
     paths:
       - '**.json'
       - '**.yaml'
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
@@ -17,6 +18,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 删除旧的 releases
+      - name: Delete old releases
+        run: |
+          gh release list | grep -v Latest | cut -f 1 | xargs -I {} gh release delete {} -y || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Get current date
         id: date
         run: echo "RELEASE_TAG=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
@@ -25,7 +33,8 @@ jobs:
         run: |
           gh release create ${{ env.RELEASE_TAG }} \
             --title "Release ${{ env.RELEASE_TAG }}" \
+            --latest \
             --notes "Automated release created at $(date +'%Y-%m-%d %H:%M:%S')" \
-            *.json *.yaml
+            *.json *.yaml 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
