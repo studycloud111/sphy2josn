@@ -3,7 +3,7 @@
       "tag": "url1",
       "protocol": "socks",
       "listen": "127.0.0.1",
-      "port": 1080,
+      "port": 10801,
       "protocol": "Socks",
       "settings": {
        "servers": [
