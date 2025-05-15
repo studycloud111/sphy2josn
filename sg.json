@@ -14,42 +14,42 @@
       "tag": "sg",
     
       "server": "dns.huhu.icu",
-      "server_port": 11124
+      "server_port": 22220
     },
     {
+      
       "type": "socks",
       "tag": "hk",
     
       "server": "dns.huhu.icu",
-      "server_port": 11123
+      "server_port": 22221
     },
     {
       "type": "socks",
       "tag": "jp",
     
       "server": "dns.huhu.icu",
-      "server_port": 11125
+      "server_port": 22222
     },
     {
       "type": "socks",
       "tag": "tw",
     
       "server": "twdns.huhu.icu",
-      "server_port": 11126
+      "server_port": 22223
     },
     {
       "type": "socks",
       "tag": "us",
     
       "server": "dnsus.huhu.icu",
-      "server_port": 23005
+      "server_port": 22222
     },
     {
       "type": "socks",
       "tag": "uk",
-    
       "server": "dnsuk.huhu.icu",
-      "server_port": 23005
+      "server_port": 22222
     }
   ],
   "route": {
