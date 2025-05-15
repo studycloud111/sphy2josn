@@ -1,110 +1,64 @@
 {
+  "dns": {
+    "servers": [
+      {
+        "tag": "cloudflare",
+        "address": "1.1.1.1",
+        "strategy": "prefer_ipv4"
+      }
+    ]
+  },
   "outbounds": [
     {
       "tag": "direct",
       "type": "direct",
       "domain_strategy": "prefer_ipv4"
-    },
+    }
+  ],
+  "endpoints": [
     {
-      "type": "block",
-      "tag": "block"
-    },
-    {
-      "type": "socks",
-      "tag": "sg",
-    
-      "server": "dns.huhu.icu",
-      "server_port": 22220
-    },
-    {
-      
-      "type": "socks",
-      "tag": "hk",
-    
-      "server": "dns.huhu.icu",
-      "server_port": 22221
-    },
-    {
-      "type": "socks",
-      "tag": "jp",
-    
-      "server": "dns.huhu.icu",
-      "server_port": 22222
-    },
-    {
-      "type": "socks",
-      "tag": "tw",
-    
-      "server": "twdns.huhu.icu",
-      "server_port": 22223
-    },
-    {
-      "type": "socks",
-      "tag": "us",
-    
-      "server": "dnsus.huhu.icu",
-      "server_port": 22222
-    },
-    {
-      "type": "socks",
-      "tag": "uk",
-      "server": "dnsuk.huhu.icu",
-      "server_port": 22222
+      "type": "wireguard",
+      "tag": "warp",
+      "system": false,
+      "name": "warp",
+      "mtu": 1380,
+      "address": ["172.16.0.2/32"],
+      "private_key": "2DRzSLT1OBh+mN4fxZc+gu+hfYb8X4a9d0oD5NCb60Q=",
+      "peers": [
+         {
+           "address": "engage.cloudflareclient.com",
+           "port": 2408,
+           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+           "allowed_ips": ["0.0.0.0/0"],
+           "reserved": [45,85,21]
+          }
+       ]
     }
   ],
   "route": {
     "rules": [
       {
-        "geosite": [
-          "openai",
-          "catchplay",
-          "bahamut",
-          "projectsekai",
-          "bilibili"
-        ],
-        "outbound": "tw"
+        "ip_is_private": true,
+        "action": "reject"
       },
       {
-        "geosite": [
-          "disney",
-          "netflix"
-        ],
-        "outbound": "sg"
-      },
-      {
-        "geosite": [
-          "abema",
-          "dmm",
-          "hulu",
-          "niconico"
-        ],
-        "outbound": "jp"
-      },
-      {
-        "geosite": [
-          "bbc",
-          "twitter"
-        ],
-        "outbound": "uk"
-      },
-      {
-        "geosite": [
-          "hbo",
-          "dazn"
-        ],
-        "outbound": "us"
-      },
-      {
-        "outbound": "block",
-        "geoip": [
-          "private"
-        ]
-      },
-      {
-        "geosite": [
-          "google"
+        "rule_set": [
+          "geosite-google"
         ],
         "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ads-all"
+        ],
+        "action": "reject"
+      },
+      {
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
+        ],
+        "outbound": "warp"
       },
       {
         "domain_regex": [
@@ -131,7 +85,7 @@
             "(.*.||)(laomoe|jiyou|ssss|lolicp|vv1234|0z|4321q|868123|ksweb|mm126).(com|cloud|fun|cn|gs|xyz|cc)",
             "(flows|miaoko).(pages).(dev)"
         ],
-        "outbound": "block"
+        "action": "reject"
       },
       {
         "outbound": "direct",
@@ -139,6 +93,41 @@
           "udp","tcp"
         ]
       }
+    ],
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs",
+        "download_detour": "direct"
+      }
     ]
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
   }
 }
