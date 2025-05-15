@@ -10,58 +10,46 @@
       "tag": "block"
     },
     {
-      "type": "shadowsocks",
+      "type": "socks",
       "tag": "sg",
     
       "server": "dns.huhu.icu",
-      "server_port": 11124,
-      "method": "chacha20-ietf-poly1305",
-      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+      "server_port": 11124
     },
     {
       
-      "type": "shadowsocks",
+      "type": "socks",
       "tag": "hk",
     
       "server": "dns.huhu.icu",
-      "server_port": 11123,
-      "method": "chacha20-ietf-poly1305",
-      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+      "server_port": 11123
     },
     {
-      "type": "shadowsocks",
+      "type": "socks",
       "tag": "jp",
     
       "server": "dns.huhu.icu",
-      "server_port": 11125,
-      "method": "chacha20-ietf-poly1305",
-      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+      "server_port": 11125
     },
     {
-      "type": "shadowsocks",
+      "type": "socks",
       "tag": "tw",
     
       "server": "twdns.huhu.icu",
-      "server_port": 11126,
-      "method": "chacha20-ietf-poly1305",
-      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+      "server_port": 11126
     },
     {
-      "type": "shadowsocks",
+      "type": "socks",
       "tag": "us",
     
       "server": "dnsus.huhu.icu",
-      "server_port": 23005,
-      "method": "chacha20-ietf-poly1305",
-      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+      "server_port": 23005
     },
     {
-      "type": "shadowsocks",
+      "type": "socks",
       "tag": "uk",
       "server": "dnsuk.huhu.icu",
-      "server_port": 23005,
-      "method": "chacha20-ietf-poly1305",
-      "password": "db9aab25-8dc1-43fb-97a1-7c71090acfca"
+      "server_port": 23005
     }
   ],
   "route": {
